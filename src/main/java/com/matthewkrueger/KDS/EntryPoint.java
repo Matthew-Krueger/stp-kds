@@ -18,10 +18,44 @@ package com.matthewkrueger.KDS;
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+import com.matthewkrueger.KDS.displays.DisplayManager;
+
+import java.io.File;
+import java.util.Properties;
+
 public class EntryPoint {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
+        /* Init the filesystem access nodes, and load properties */
+        System.out.println("Starting APP");
+        initFileSystem();
+        Settings.initProperties();
+
+        /* Create the display manager and set if it should be accelerated */
+        DisplayManager dm = new DisplayManager();
+        dm.setGraphicsAcceleration(Settings.APP_PROPERTIES.getProperty("use-hardware-acceleration"));
+
+        dm.createMainDisplay();
+
+        //AudioHandler.playAudioFile("/sound/bell.wav");
+
+
+    }
+
+    public static void initFileSystem(){
+        System.out.println("Initializing Filesystem access nodes");
+        File applicationDirectory = new File(Settings.APP_DIRECTORY);
+        if (! applicationDirectory.exists()){
+            //noinspection ResultOfMethodCallIgnored
+            applicationDirectory.mkdirs();
+        }
+        Settings.APP_DIRECTORY_FILE = applicationDirectory;
+
+        if(Settings.APP_PROPERTIES == null) {
+            Settings.APP_PROPERTIES = new Properties();
+            System.out.println("Properties Created");
+        }
 
     }
 

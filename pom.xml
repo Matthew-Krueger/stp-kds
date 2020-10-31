@@ -55,7 +55,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.matthewkrueger.KDS</mainClass>
+                            <mainClass>com.matthewkrueger.KDS.EntryPoint</mainClass>
                             <!-- <classpathPrefix>lib</classpathPrefix> -->
                             <!-- <mainClass>test.org.Cliente</mainClass> -->
                         </manifest>
