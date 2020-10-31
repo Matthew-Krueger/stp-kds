@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="stp-kds" />
+        <module name="KDS" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="KDS" target="13" />
+    </bytecodeTargetLevel>
   </component>
 </project>
