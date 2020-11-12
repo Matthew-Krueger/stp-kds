@@ -21,12 +21,8 @@ package com.matthewkrueger.KDS.fontUtils;
 import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class FontManager {
 
@@ -43,6 +39,7 @@ public class FontManager {
 
         for(String fontFamilyName : ge.getAvailableFontFamilyNames()){
             FONTS.put(fontFamilyName, new FontFamily(fontFamilyName));
+            //System.out.println("Loading font" + fontFamilyName);
         }
         init = true;
 

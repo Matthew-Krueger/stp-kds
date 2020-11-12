@@ -19,8 +19,14 @@ package com.matthewkrueger.KDS;
  */
 
 import com.matthewkrueger.KDS.displays.DisplayManager;
+import com.matthewkrueger.KDS.fontUtils.FontManager;
+import com.matthewkrueger.KDS.utils.InternetTest;
+import com.matthewkrueger.KDS.utils.OAuth.OAuthSubroutines;
 
+import java.awt.*;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class EntryPoint {
@@ -31,15 +37,25 @@ public class EntryPoint {
         System.out.println("Starting APP");
         initFileSystem();
         Settings.initProperties();
+        initFonts();
+        InternetTest.performInternetTest();
+        OAuthSubroutines.initSquareClient();
+        OAuthSubroutines.startOAuth();
+
+        /* Set
+        OAuthMiniServer.startMiniServerForTesting();
+
+        /* Set if graphics acceleration is to be used */
+        DisplayManager.setGraphicsAcceleration(Settings.APP_PROPERTIES.getProperty("use-hardware-acceleration"));
+
 
         /* Create the display manager and set if it should be accelerated */
         DisplayManager dm = new DisplayManager();
-        dm.setGraphicsAcceleration(Settings.APP_PROPERTIES.getProperty("use-hardware-acceleration"));
 
         dm.createMainDisplay();
 
-        //AudioHandler.playAudioFile("/sound/bell.wav");
 
+        //AudioHandler.playAudioFile("/sound/bell.wav");
 
     }
 
@@ -55,6 +71,26 @@ public class EntryPoint {
         if(Settings.APP_PROPERTIES == null) {
             Settings.APP_PROPERTIES = new Properties();
             System.out.println("Properties Created");
+        }
+
+    }
+
+    public static void initFonts(){
+
+        FontManager.initFonts();
+
+        InputStream is1 = Settings.class.getResourceAsStream("/fonts/courier-prime/Courier Prime.ttf");
+        InputStream is2 = Settings.class.getResourceAsStream("/fonts/courier-prime/Courier Prime Bold.ttf");
+        InputStream is3 = Settings.class.getResourceAsStream("/fonts/courier-prime/Courier Prime Bold Italic.ttf");
+        InputStream is4 = Settings.class.getResourceAsStream("/fonts/courier-prime/Courier Prime Italic.ttf");
+
+        try {
+            FontManager.registerFamily(is1, Font.TRUETYPE_FONT);
+            FontManager.registerFamily(is2, Font.TRUETYPE_FONT);
+            FontManager.registerFamily(is3, Font.TRUETYPE_FONT);
+            FontManager.registerFamily(is4, Font.TRUETYPE_FONT);
+        } catch (IOException | FontFormatException e) {
+            e.printStackTrace();
         }
 
     }

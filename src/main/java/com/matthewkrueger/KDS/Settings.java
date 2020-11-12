@@ -18,22 +18,19 @@ package com.matthewkrueger.KDS;
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import com.matthewkrueger.KDS.fontUtils.Fonts;
+import com.squareup.square.SquareClient;
 
 import java.awt.*;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.net.URL;
 import java.util.Properties;
 
 public class Settings {
 
-    public static Fonts FONTS = new Fonts();
+    public static boolean IS_PRODUCTION = true;
 
     public static Dimension WINDOW_SIZE = new Dimension(1280,720),
-            RESET_WINDOW_SIZE = new Dimension(850,480),
-            ERROR_WINDOW_SIZE = new Dimension(480,200);
+            ERROR_WINDOW_SIZE = new Dimension(1280,720);
 
     public static Color BACKGROUND_COLOR = new Color(10, 10, 10);
 
@@ -46,8 +43,10 @@ public class Settings {
     /* App Properties Settings */
     public static File APP_DIRECTORY_FILE = null;
     public static File APP_PROPERTIES_FILE = null;
+    public static Properties OAUTH_PROPERTIES = new Properties();
     public static Properties APP_PROPERTIES = new Properties();
 
+    public static SquareClient CLIENT;
 
     public static void saveProperties() {
         try {
@@ -62,6 +61,7 @@ public class Settings {
     }
 
     public static void initProperties(){
+
         try{
             /* Create new file if not exists */
             if(Settings.APP_PROPERTIES_FILE == null) {
@@ -72,6 +72,32 @@ public class Settings {
                     System.out.println("Created new Properties file, saving to disk.");
                     saveProperties();
                 }
+            }
+
+            /* load oauth */
+            {
+                System.out.println("Loading oauth");
+                URL properties = new URL("https://oauth.matthewkrueger.com/oauth.properties");
+                InputStream connection = properties.openConnection().getInputStream();
+                Settings.OAUTH_PROPERTIES = new Properties();
+                Settings.OAUTH_PROPERTIES.load(connection);
+                System.out.println("Loaded OAuth 1");
+
+                URL props2 = new URL("https://oauth.matthewkrueger.com/oauth1.properties");
+                InputStream conn2 = props2.openConnection().getInputStream();
+                Properties f = new Properties();
+                f.load(conn2);
+                System.out.println("Loaded oauth 2");
+
+                System.out.println("Merging oauth data");
+
+                if(!f.containsKey("oauth-key")){
+                    System.out.println("No oauth-key");
+                    System.exit(-1);
+                }
+
+                Settings.OAUTH_PROPERTIES.setProperty("oauth-key", f.getProperty("oauth-key"));
+
             }
 
             /* Load current properties on the disk */

@@ -5,14 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10f179f2-158e-40eb-ba4d-8c6b662feef3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/displays/DisplayManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/displays/MainPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/utils/AudioHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_12_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_15_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/utils/AES.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/utils/GenericErrorDisplay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/utils/InternetTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/utils/OAuth/OAuthMiniServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/utils/OAuth/OAuthSubroutines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/utils/StackTraceUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KDS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/KDS.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/EntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/EntryPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/displays/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/displays/DisplayManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/displays/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/displays/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/fontUtils/FontManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/fontUtils/FontManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/utils/AudioHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matthewkrueger/KDS/utils/AudioHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +56,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -55,24 +67,17 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.matthewkrueger.KDS.utils.OAuth" />
+    </key>
   </component>
   <component name="RunManager" selected="JAR Application.Run KDS">
     <configuration name="RunApp" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.matthewkrueger.KDS.EntryPoint" />
       <module name="KDS" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,7 +131,9 @@
       <option name="presentableId" value="Default" />
       <updated>1604157896810</updated>
       <workItem from="1604157897977" duration="505000" />
-      <workItem from="1604158413441" duration="7744000" />
+      <workItem from="1604158413441" duration="22399000" />
+      <workItem from="1604262316330" duration="13000" />
+      <workItem from="1605148510907" duration="139000" />
     </task>
     <task id="LOCAL-00001" summary="Added my FontUtils">
       <created>1604159007369</created>
@@ -135,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604159007369</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Have a window that works and can be accelerated with settings stored in a settings.properties.">
+      <created>1604173681556</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604173681556</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +157,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added my FontUtils" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added my FontUtils" />
+    <MESSAGE value="Have a window that works and can be accelerated with settings stored in a settings.properties." />
+    <option name="LAST_COMMIT_MESSAGE" value="Have a window that works and can be accelerated with settings stored in a settings.properties." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
